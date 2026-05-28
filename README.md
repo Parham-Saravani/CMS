@@ -10,25 +10,34 @@ The project includes full CRUD functionality, toast notifications, localStorage 
 This project is a front-end CMS dashboard developed as a portfolio project to demonstrate practical JavaScript skills, state management, and interactive UI behavior.  
 It is designed with a Persian interface and supports RTL-friendly layouts for a better localized user experience.
 
+![App Screenshot](Images/homePage.png)
+
 ---
 
 ## Features
 
 - **User Management**  
   Add, edit, and delete users with an intuitive and responsive interface.
+  ![UserPage Screenshot](Images/users.png)
 
 - **Product Management**  
   Add, edit, and delete products with persistent storage using `localStorage`.
+  
+  ![UserPage Screenshot](Images/products.png)
 
 - **Toast Notifications**  
   Visual feedback is provided for all actions, including success messages, validation errors, and delete confirmations.
 
 - **Dark / Light Theme**  
   Users can switch between dark and light modes, with the selected theme saved in `localStorage`.
+  
+![LightTheme Screenshot](Images/lightTheme.png)
+
+![DarkTheme Screenshot](Images/darkTheme.png)
 
 - **Dynamic Pagination**  
   Content is displayed through live pagination for better usability and cleaner navigation.
-
+  
 - **Persian Language Support**  
   The interface is fully available in Persian and optimized for RTL layouts.
 
