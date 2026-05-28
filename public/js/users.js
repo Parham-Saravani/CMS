@@ -478,7 +478,7 @@ function editSubmitHandler(productId) {
             itemData.email = emailInput.value.trim();
             itemData.password = passwordInput.value.trim();
             saveDataInLocalStorage();
-            createUsersElements();
+            createPerPageElements();
             hideModal();
             showToast('success', 'ویرایش کاربر با موفقیت انجام شد');
         }

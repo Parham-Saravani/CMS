@@ -326,7 +326,7 @@ function editSubmitHandler(productId) {
       itemData.slug = slueInput.value.trim();
       console.log(data.products);
       saveDataInLocalStorage();
-      createUsersElements();
+      createPerPageElements();
       hideModal();
       showToast('success', 'ویرایش   محصول با موفقیت انجام شد')
 
