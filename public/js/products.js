@@ -327,7 +327,9 @@ function editSubmitHandler(productId) {
       console.log(data.products);
       saveDataInLocalStorage();
       createUsersElements();
-      hideModal();    
+      hideModal();
+      showToast('success', 'ویرایش   محصول با موفقیت انجام شد')
+
       // saveDataInLocalStorage()
     }
   }
@@ -394,7 +396,7 @@ function addNewProduct() {
     createUsersElements()
     saveDataInLocalStorage();
     calculateAllProduc();
-    showToast('success', 'محصول با موفقیت اضافه شد')
+    showToast('success', 'افزدون محصول با موفقیت انجام شد')
   }
 }
 function deleteProduct() {
@@ -403,7 +405,7 @@ function deleteProduct() {
   saveDataInLocalStorage();
   calculateAllProduc();
   hideModal();
-  showToast('success', 'محصول با موفقیت پاک شد :)');
+  showToast('success', 'حذف محصول با موفقیت انجام شد');
   calculateTotalPages();
   createPaginationButtons();
 

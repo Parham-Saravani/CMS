@@ -5,6 +5,12 @@ const totalUsersCount = document.querySelector('.users-data')
 const usersContainer = document.querySelector('.table-body')
 const paginationContainer = document.querySelector('.pagination')
 
+const toast = document.querySelector('.toast')
+const toastProgress = document.querySelector('.process')
+const toastContent = document.querySelector('.toast-content')
+
+
+
 let data = {
     products: [],
     users: []
@@ -322,6 +328,13 @@ function createUserFormValidator() {
     } else if (password) {
         hideAlert(passwordAlert)
     }
+    if (password.length < 8) {
+        isValid = false;
+        showAlert(passwordAlert);
+        passwordAlert.textContent = 'پسوورد باید حداقل ۸ کارکتر باشد';
+    } else if(password.length >= 8){
+        isValid = true;
+    }
 
     if (isValid) {
         addNewUser(name, userName, email, password);
@@ -342,7 +355,9 @@ function addNewUser(fullName, userName, email, password) {
     }
     data.users.push(newUser);
     saveDataInLocalStorage();
-    calculateTotalUsersNumber()
+    calculateTotalUsersNumber();
+    showToast('success', 'افزودن کاربر با موفقیت انجام شد');
+
 }
 
 //! delete user
@@ -354,6 +369,7 @@ function deleteUserHandler(index) {
     saveDataInLocalStorage();
     hideModal();
     calculateTotalUsersNumber();
+    showToast('success', 'حذف کاربر با موفقیت انجام شد');
 
     if (currentPage !== 1 && data.users.length === totalPages * indexPerPage) {
         currentPage--;
@@ -444,7 +460,12 @@ function editSubmitHandler(productId) {
         } else {
             hideAlert(passwordAlert)
         }
-
+        if (password.length < 8) {
+            isValid = false;
+            showAlert(passwordAlert);
+            passwordAlert.textContent = 'پسوورد باید حداقل ۸ کارکتر باشد';
+            return;
+        } 
         if (!email.includes('@gmail.com')) {
             showAlert(emailAlert);
             emailAlert.textContent = 'ایمیل وارد شده صحیح نمیباشد';
@@ -459,6 +480,7 @@ function editSubmitHandler(productId) {
             saveDataInLocalStorage();
             createUsersElements();
             hideModal();
+            showToast('success', 'ویرایش کاربر با موفقیت انجام شد');
         }
     }
 }
@@ -466,6 +488,56 @@ function editSubmitHandler(productId) {
 
 
 //? helper functions
+
+function showToast(status, text) {
+    toast.classList.remove('hidden');
+    switch (status) {
+        case 'failed': {
+            toastContentHandler('مشکلی پیش آمده است', 'failed', 'failed')
+            break;
+        }
+        case 'success': {
+            toastContentHandler(text, 'success', 'success')
+            break;
+        }
+    }
+}
+function toastContentHandler(text, classStatus, progressStatus) {
+    toastContent.textContent = text
+    toast.classList.add(classStatus);
+    toastProgressBar(progressStatus);
+}
+function toastProgressBar(status) {
+    let num = 0;
+    switch (status) {
+        case 'failed': {
+            const progressWidth = setInterval(function () {
+                num++;
+                toastProgress.style.width = `${num}%`;
+                if (num === 170) {
+                    toastProgress.style.width = `0%`;
+                    clearInterval(progressWidth);
+                    toast.classList.add('hidden')
+                }
+            }, 20)
+            break;
+        }
+        case 'success': {
+            const progressWidth = setInterval(function () {
+                num++;
+                toastProgress.style.width = `${num}%`;
+                if (num === 170) {
+                    toastProgress.style.width = `0%`;
+                    clearInterval(progressWidth);
+                    toast.classList.add('hidden')
+                }
+            }, 20)
+            break;
+        }
+    }
+}
+
+
 function showModal() {
     modal.classList.remove('hidden')
 }
