@@ -5,6 +5,17 @@ The project includes full CRUD functionality, toast notifications, localStorage 
 
 ---
 
+## 🛠 Tech Stack
+
+<p align="left">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/sabzlearn-ir/sabzlearn-ir/4d2a781931f79c747a132c28eae4ebfbb8eaa7d7/javascript-colored.svg" width="40" height="40" alt="Javascript" /></a>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/sabzlearn-ir/sabzlearn-ir/4d2a781931f79c747a132c28eae4ebfbb8eaa7d7/html5-colored.svg" width="40" height="40" alt="HTML5" /></a>
+    <a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/sabzlearn-ir/sabzlearn-ir/4d2a781931f79c747a132c28eae4ebfbb8eaa7d7/css3-colored.svg" width="40" height="40" alt="CSS3" /></a>
+       <a href="https://tailwindcss.com/docs" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/Parham-Saravani/Parham-Saravani/117c3e04fa5a212738f84c5085a21f725ac7ed0d/Icons/Tailwind.svg" width="40" height="40" alt="Tailwind Css" /></a>
+</p>
+
+---
+
 ## Overview
 
 This project is a front-end CMS dashboard developed as a portfolio project to demonstrate practical JavaScript skills, state management, and interactive UI behavior.  
@@ -18,6 +29,7 @@ It is designed with a Persian interface and supports RTL-friendly layouts for a 
 
 - **User Management**  
   Add, edit, and delete users with an intuitive and responsive interface.
+  
   ![UserPage Screenshot](Images/users.png)
 
 - **Product Management**  
@@ -40,15 +52,6 @@ It is designed with a Persian interface and supports RTL-friendly layouts for a 
   
 - **Persian Language Support**  
   The interface is fully available in Persian and optimized for RTL layouts.
-
----
-
-## Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- localStorage
 
 ---
 
